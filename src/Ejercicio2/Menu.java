@@ -107,6 +107,13 @@ public class Menu {
                 break;
             case 6:
                 System.out.println("Saliendo del programa...");
+                System.out.println("Gracias por usar nuestra aplicación. Nos vemos pronto");
+                //Esperar 3 segundos para acabar el programa
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 break;
             default:
                 System.out.println("Opción no válida");
