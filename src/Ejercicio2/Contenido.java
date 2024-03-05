@@ -40,7 +40,7 @@ public abstract class Contenido {
 
     // Método toString
     public String toString() {
-        return "Título: " + titulo + " Autor: " + autor + " Género: " + genero;
+        return "Título: " + titulo +","+ " Autor: " + autor +"," + " Género: " + genero;
     }
 
 }

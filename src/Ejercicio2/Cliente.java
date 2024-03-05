@@ -43,6 +43,12 @@ public class Cliente {
         System.out.println("Introduce el nombre del cliente: ");
         String nombre = scanner.nextLine();
         System.out.println("Introduce que te gusta leer (género):");
+        // Esperar dos segundos para mostrar los libros
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String genero = scanner.nextLine();
         if(genero.equals("Terror") || genero.equals("terror") || genero.equals("TERROR")){
             //Recomendar titulos de libros de terror
@@ -78,60 +84,6 @@ public class Cliente {
         Cliente cliente = new Cliente(nombre, clientes.size() + 1);
         System.out.println("Cliente creado:");
         clientes.add(cliente);
-    }
-
-    public void opcionesMenu(int opcion) {
-        switch (opcion) {
-            case 1:
-                crearCliente();
-                menu();
-                break;
-            case 2:
-                mostrarClientes();
-                menu();
-                break;
-            case 3:
-                System.out.println("Importar recursos");
-                System.out.println("");
-                int opcionImportar = scanner.nextInt();
-                if(opcionImportar == 1){
-                    Libro.crearLibro();
-                }
-                if(opcionImportar == 2){
-                    Video.crearVideo();
-                }
-                if(opcionImportar != 1 && opcionImportar != 2){
-                    System.out.println("Opción no válida");
-                }
-                break;
-            case 4:
-                //crearRecurso();
-                break;
-            case 5:
-                //mostrarRecursos();
-                break;
-            case 6:
-                System.out.println("Saliendo del programa...");
-                break;
-            default:
-                System.out.println("Opción no válida");
-                menu();
-                break;
-        }
-    }
-
-    public void menu() {
-        int opcion;
-        System.out.println("Menu");
-        System.out.println("1. Crear cliente");
-        System.out.println("2. Mostrar clientes");
-        System.out.println("3. Salir");
-        System.out.println("Introduce una opción: ");
-        opcion = scanner.nextInt();
-        if(opcion < 1 || opcion > 3) {
-            System.out.println("Opción no válida");
-        }
-        opcionesMenu(opcion);
     }
     //Método para mostrar los clientes
     public static void mostrarClientes() {
