@@ -88,7 +88,7 @@ public class Menu {
                 break;
             case 5:
                 //Opcion para mostrar los libros y videos almacenados
-                System.out.println("Mostrando recursos");
+                System.out.println("Historial de compras;");
                 System.out.println("Libros: ");
                 for (Libro libro : Libro.libros) {
                     System.out.println(libro);
@@ -130,7 +130,7 @@ public class Menu {
         System.out.println("2. Mostrar clientes");
         System.out.println("3. Importar recursos");
         System.out.println("4. Eliminar recurso");
-        System.out.println("5. Mostrar recursos");
+        System.out.println("5. Historial de compras");
         System.out.println("6. Salir");
         System.out.println("Introduce una opción: ");
         opcion = scanner.nextInt();

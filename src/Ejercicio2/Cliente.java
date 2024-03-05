@@ -39,56 +39,48 @@ public class Cliente {
     }
 
     public static void crearCliente() {
+        Menu menu = new Menu();
 
         System.out.println("Introduce el nombre del cliente: ");
         String nombre = scanner.nextLine();
-        System.out.println("Introduce que te gusta leer (género):");
-        // Esperar dos segundos para mostrar los libros
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String genero = scanner.nextLine();
-        if(genero.equals("Terror") || genero.equals("terror") || genero.equals("TERROR")){
-            //Recomendar titulos de libros de terror
-            System.out.println("Te recomendamos estos libros de terror: ");
-            System.out.println("1. El resplandor");
-            System.out.println("2. It");
-        }
-        //Si el genero es igual a "Romantico", "Romántico" o "romántico"
-        if(genero.equals("Romantico" ) || genero.equals("Romántico") || genero.equals("romántico")){
-            //Recomendar titulos de libros románticos
-            System.out.println("Te recomendamos estos libros románticos: ");
-            System.out.println("1. Orgullo y prejuicio");
-            System.out.println("2. Cumbres borrascosas");
-        }
-        if(genero.equals("Fantasia") || genero.equals("fantasia") || genero.equals("FANTASIA")){
-            //Recomendar titulos de libros de fantasía
-            System.out.println("Te recomendamos estos libros de fantasía: ");
-            System.out.println("1. El señor de los anillos");
-            System.out.println("2. Harry Potter");
-        }
-        if(genero.equals("Ciencia Ficción") || genero.equals("ciencia ficción") || genero.equals("CIENCIA FICCIÓN")){
-            //Recomendar titulos de libros de ciencia ficción
-            System.out.println("Te recomendamos estos libros de ciencia ficción: ");
-            System.out.println("1. Dune");
-            System.out.println("2. Fundación");
-        }
-        if(genero.equals("Aventuras") || genero.equals("aventuras") || genero.equals("AVENTURAS")){
-            //Recomendar titulos de libros de aventuras
-            System.out.println("Te recomendamos estos libros de aventuras: ");
-            System.out.println("1. La isla del tesoro");
-            System.out.println("2. Las aventuras de Tom Sawyer");
-        }
         Cliente cliente = new Cliente(nombre, clientes.size() + 1);
         System.out.println("Cliente creado:");
         clientes.add(cliente);
     }
     //Método para mostrar los clientes
     public static void mostrarClientes() {
+        //Si no hay clientes, mostrar un mensaje
+        if(clientes.size() == 0){
+            System.out.println("No hay clientes");
+        }
+        //Esperar 0.2 segundos para mostrar de nuevo el menu
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for (Cliente cliente : clientes) {
             System.out.println(cliente);
+        }
+    }
+    public void historialDeCompras(){
+        System.out.println("Por favor, indica tu id de cliente:");
+        //Obtener el id del cliente
+        int id = scanner.nextInt();
+        //Recorrer el arraylist de clientes
+        for (Cliente cliente : clientes) {
+            //Si el id del cliente es igual al id introducido
+            if(cliente.getId() == id){
+                System.out.println("Verificado con éxito");
+                // Historial de compras, es decir, en el menu, la opcion tres es para importar recursos, si este ha importado algo, mostrar lo que ha importado
+                Libro.crearLibro();
+                if(Libro.libros.size() > 0){
+                    System.out.println("Historial de compras: ");
+                    for (Libro libro : Libro.libros) {
+                        System.out.println(libro);
+                    }
+                }
+            }
         }
     }
 }
