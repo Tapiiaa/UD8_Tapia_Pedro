@@ -1,5 +1,6 @@
 Práctica 8 Técnicas de Programación
 
+Link a mi repositorio: https://github.com/Tapiiaa/UD8_Tapia_Pedro.git
 Ejercicio 1:
 ### Enunciado:
 Desarrollar una clase JugadorGuerraAR para simular una batalla de dados con realidad aumentada. Cada jugador tiene un dado virtual de seis caras y fichas, y la clase debe incluir algoritmos para animaciones y efectos visuales en 3D. Implementar un algoritmo principal que utilice esta clase en un entorno de realidad aumentada
