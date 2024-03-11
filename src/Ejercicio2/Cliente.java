@@ -1,6 +1,7 @@
 package Ejercicio2;
 //Reutilizo código de la clase Cliente del ejercicio 2 de la práctica 7
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 public class Cliente {
     static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -83,4 +84,8 @@ public class Cliente {
             }
         }
     }
+
+
+
+
 }

@@ -45,4 +45,11 @@ public class Video extends Contenido{
 
         System.out.println("Video creado con éxito");
     }
+    // Método para mostrar los videos
+
+public static void mostrarVideos() {
+        for (Video video : videos) {
+            System.out.println("Título: " + video.getTitulo() + " | Autor: " + video.getAutor() + " | Género: " + video.getGenero() + " | Duración: " + video.getDuracion() + " minutos");
+        }
+    }
 }

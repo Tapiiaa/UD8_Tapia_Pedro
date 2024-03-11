@@ -2,7 +2,7 @@ package Ejercicio2;
 
 public abstract class Contenido {
     // Recursos comunes entre los videos y los libros
-    private String titulo;
+    private static String titulo;
     private String autor;
     private String genero;
 
@@ -14,7 +14,7 @@ public abstract class Contenido {
     }
 
     // Getters y setters
-    public String getTitulo() {
+    public static String getTitulo() {
         return titulo;
     }
 

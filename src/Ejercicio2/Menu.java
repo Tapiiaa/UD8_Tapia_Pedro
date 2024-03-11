@@ -19,7 +19,7 @@ public class Menu {
                 Cliente.crearCliente();
                 //Esperar dos segundos para mostrar nuevamente el menú
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -29,9 +29,12 @@ public class Menu {
                 Cliente.mostrarClientes();
                 //Esperar dos segundos para mostrar nuevamente el menú
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    //Pulsar enter para volver al menú
+
+
                 }
 
                 menu();
@@ -39,7 +42,7 @@ public class Menu {
             case 3:
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Importar recursos");
-                System.out.println("");
+                System.out.println("-----------------");
                 System.out.println("1. Importar libro");
                 System.out.println("2. Importar video");
                 int opcionImportar = scanner.nextInt();
@@ -88,15 +91,14 @@ public class Menu {
                 break;
             case 5:
                 //Opcion para mostrar los libros y videos almacenados
-                System.out.println("Historial de compras;");
+                System.out.println("Recursos almacenados:");
+                System.out.println("Presiona enter para mostrar los libros y videos almacenados");
+                Scanner scanner1 = new Scanner(System.in);
+                scanner1.nextLine();
                 System.out.println("Libros: ");
-                for (Libro libro : Libro.libros) {
-                    System.out.println(libro);
-                }
+                Libro.mostrarLibros();
                 System.out.println("Videos: ");
-                for (Video video : Video.videos) {
-                    System.out.println(video);
-                }
+                Video.mostrarVideos();
                 //Esperar dos segundos para mostrar nuevamente el menú
                 try {
                     Thread.sleep(2000);
@@ -106,6 +108,10 @@ public class Menu {
                 menu();
                 break;
             case 6:
+                Pedido pedido = new Pedido();
+                pedido.crearPedido();
+                break;
+            case 7:
                 System.out.println("Saliendo del programa...");
                 System.out.println("Gracias por usar nuestra aplicación. Nos vemos pronto");
                 //Esperar 3 segundos para acabar el programa
@@ -130,8 +136,9 @@ public class Menu {
         System.out.println("2. Mostrar clientes");
         System.out.println("3. Importar recursos");
         System.out.println("4. Eliminar recurso");
-        System.out.println("5. Historial de compras");
-        System.out.println("6. Salir");
+        System.out.println("5. Biblioteca de libros y videos");
+        System.out.println("6. Crear Pedido");
+        System.out.println("7. Salir");
         System.out.println("Introduce una opción: ");
         opcion = scanner.nextInt();
         if(opcion < 1 || opcion > 6) {
@@ -139,6 +146,7 @@ public class Menu {
         }
         opcionesMenu(opcion);
     }
+
 
     }
 
